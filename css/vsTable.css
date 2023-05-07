@@ -1,0 +1,54 @@
+.overflowHide {
+    overflow: hidden;
+}
+
+.overflowAuto {
+    overflow: auto;
+    height: 250px;
+}
+
+#vsTable table {
+    width: 200%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+#vsTable table td {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 5px;
+    white-space: nowrap;
+    min-width: 150px;
+    max-width: 150px;
+}
+
+#vsTable tr.expandable td:first-child::after {
+    content: '+';
+}
+
+#vsTable tr.expandable.expanded td:first-child::after {
+    content: '-';
+}
+
+#vsTable #tableBody tr.expandedChild {
+    display: table-row;
+}
+
+#vsTable tr:not(tr:first-child) {
+    display: none;
+}
+
+#vsTable tr.expandable.expanded {
+    display: table-row;
+}
+
+#vsTable table td.vsSorted::after {
+  content: '\f077';
+  position: absolute;
+  right: 5px;
+  font-family: FontAwesome;
+}
+
+#vsTable table td.vsSorted[data-sort-dir="desc"]::after {
+    content: '\f078';
+}
